@@ -32,63 +32,68 @@
 ---
 
 ## 🚀 Attack Simulation
-```bash
-# 🔹 SSH Brute Force Attack
+# 🔐 SSH & FTP Brute Force Attack Lab using Wazuh
+
+## 🔹 SSH Brute Force Attack
+
 hydra -l ubuntu -P rockyou.txt ssh://<target-ip>
 
-📸 Screenshot:
-screenshots/ssh_attack.png
+📸 Screenshot:  
+![SSH Brute Force](screenshots/sshbf.png)
+
+---
+
+## 🔹 FTP Brute Force Attack
 
 hydra -l ftpuser -P rockyou.txt ftp://<target-ip>
 
-📸 Screenshot:
-screenshots/ftp_attack.png
+📸 Screenshot:  
+![FTP Brute Force](screenshots/ftpbf.png)
 
-📡 Log Collection (Ubuntu → Wazuh)
+---
+
+## 📡 Log Collection (Ubuntu → Wazuh)
 
 Collected logs:
 - /var/log/auth.log
 - /var/log/vsftpd.log
 
-📸 Screenshot:
-screenshots/log_collection.png
+📸 Screenshot:  
+![Log Collection Dashboard](screenshots/ftpdash.png)
 
-🧾 Wazuh Detection Results
-- Multiple failed login attempts detected
-- Brute force alert triggered
-- Source IP marked suspicious
-- Events visible in Wazuh dashboard
+---
 
-📸 Screenshot:
-screenshots/wazuh_alerts.png
+## 🧾 Wazuh Detection Results
 
-📊 Key Findings
-- SSH brute force is easily detectable via auth.log
-- FTP logs require careful parsing but still detectable
-- Wazuh rules successfully detect repeated failed logins
-- Threshold-based alerts work effectively
+- Multiple failed login attempts detected  
+- Brute force alert triggered  
+- Source IP marked suspicious  
+- Events visible in Wazuh dashboard  
 
-🧠 Learning Outcome
-- Understanding brute force attack behavior
-- Working with SIEM (Wazuh)
-- Log analysis and threat detection
-- SOC workflow exposure
+📸 Screenshot:  
+![Attack Dashboard](screenshots/attack-dboard.png)
 
-📁 Structure
-cybersecurity-bruteforce-lab/
-│
-├── README.md
-├── screenshots/
-│   ├── ssh_attack.png
-│   ├── ftp_attack.png
-│   ├── log_collection.png
-│   └── wazuh_alerts.png
-│
-├── logs/
-│   ├── auth.log
-│   └── vsftpd.log
-│
-└── notes.md
+---
 
-⚠️ Disclaimer
-This project is strictly for educational purposes in a controlled lab environment. Unauthorized access to systems is illegal..
+## 📊 Key Findings
+
+- SSH brute force is easily detectable via auth.log  
+- FTP logs require careful parsing but still detectable  
+- Wazuh rules successfully detect repeated failed logins  
+- Threshold-based alerts work effectively  
+
+---
+
+## 🧠 Learning Outcome
+
+- Understanding brute force attack behavior  
+- Working with SIEM (Wazuh)  
+- Log analysis and threat detection  
+- SOC workflow exposure  
+
+---
+
+
+## ⚠️ Disclaimer
+This project is strictly for educational purposes in a controlled lab environment. Unauthorized access to systems is illegal.
+
