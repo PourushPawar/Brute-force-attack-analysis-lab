@@ -1,4 +1,4 @@
-# brute-force-attack-analysis-lab
+# 🛡️Brute-force-attack-analysis-lab
 ## 🧠 Objective
 - Perform SSH and FTP brute force attacks in a lab environment
 - Generate authentication failure logs on Ubuntu
